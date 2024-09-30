@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <button onclick="rombo()" type="button">Rombo</button>
+    <p id="Rombo"></p>
+    <script>
+      function rombo() {
+        let numeroTotal = prompt("¿De cuánta altura quieres el rombo?");
+        let numero = parseInt(numeroTotal);
+        let br = "<br>";
+
+        document.getElementById("Rombo").innerHTML = "";
+
+        for (let contador = 0; contador < numero; contador++) {
+          let linea = "";
+
+          for (let espacios = 0; espacios < numero - contador; espacios++) {
+            linea += "*";
+          }
+
+          for (let blanco = 0; blanco < 4 * contador; blanco++) {
+            linea += "&nbsp;";
+          }
+
+          for (let forma = 0; forma < numero - contador; forma++) {
+            linea += "*";
+          }
+
+          document.getElementById("Rombo").innerHTML += linea + br;
+        }
+
+        //Inverso
+        for (let contadorInverso = 1; contadorInverso < numero; contadorInverso++) {
+          let linea = "";
+
+          for (let espaciosInverso = 0; espaciosInverso <= contadorInverso; espaciosInverso++) {
+            linea += "*";
+          }
+
+          for (let blancoInverso = 0; blancoInverso < 4 * (numero - contadorInverso - 1); blancoInverso++) {
+            linea += "&nbsp;";
+          }
+
+          for (let formaInverso = 0; formaInverso <= contadorInverso; formaInverso++) {
+            linea += "*";
+          }
+
+          document.getElementById("Rombo").innerHTML += linea + br;
+        }
+      }
+    </script>
+  </body>
+</html>
